@@ -1,0 +1,9 @@
+<%= form_tag teams_path do %>
+  <label>Team Name:</label><br>
+  <%= text_field_tag :name %><br>
+
+  <label>Trainer ID:</label><br>
+  <%= number_field_tag :trainer_id %><br>
+
+  <%= submit_tag "Add Team" %>
+<% end %>
