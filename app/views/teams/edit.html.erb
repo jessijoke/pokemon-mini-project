@@ -1,0 +1,9 @@
+<%= form_for @team do |f| %>
+  <%= f.label 'Team Name:' %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label 'Trainer ID:' %><br>
+  <%= f.number_field :trainer_id %><br>
+
+  <%= f.submit "Update Team" %>
+<% end %> 

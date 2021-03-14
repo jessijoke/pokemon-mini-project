@@ -1,3 +1,9 @@
+<div style="text-align: center;">
+        <%= (link_to 'Create a New Trainer', new_trainer_path) %>
+</div>
+
 <% @trainers.each do |trainer| %>
-    <div style="text-align: center;"><%= trainer.name %></div>
+    <div style="text-align: center;">
+        <%= (link_to trainer.name, trainer_path(trainer)) %>    
+    </div>
 <% end %>

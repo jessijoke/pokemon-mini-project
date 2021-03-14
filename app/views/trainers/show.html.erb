@@ -1,1 +1,4 @@
-<h1><%= @trainer.name %></h1>
+<h1><%= @trainer.name %> <%= (link_to 'Edit', (edit_trainer_path(@trainer))) %></h1>
+<% @trainer.teams.each do |team| %>
+    <div class="trainer_teams"><%= (link_to team.name, team_path(team)) %>  </div>  
+<% end %>

@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
     def create
         @team = Team.new
         @team.name = params[:name]
+        @team.trainer_id = params
         @team.save
         redirect_to team_path(@team)
     end
@@ -24,7 +25,7 @@ class TeamsController < ApplicationController
 
     def update
         @team = Team.find(params[:id])
-        @team.update(name: params[:team][:name])
+        @team.update(name: params[:team][:name], trainer_id: params[:team][:trainer_id])
         redirect_to team_path(@team)
     end
 end
