@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
+
     def index
-        @team = Team.all
+        @teams = Team.all
     end
 
     def show
@@ -14,7 +15,7 @@ class TeamsController < ApplicationController
     def create
         @team = Team.new
         @team.name = params[:name]
-        @team.trainer_id = params
+        @team.trainer_id = params[:trainer_id]
         @team.save
         redirect_to team_path(@team)
     end
@@ -28,4 +29,6 @@ class TeamsController < ApplicationController
         @team.update(name: params[:team][:name], trainer_id: params[:team][:trainer_id])
         redirect_to team_path(@team)
     end
+
+    
 end

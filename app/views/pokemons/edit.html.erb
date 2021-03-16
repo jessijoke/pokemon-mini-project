@@ -1,0 +1,21 @@
+<div class="page_title">
+    <h1 class="h1_title">
+        Edit <%= @pokemon.name %>
+    </h1>
+</div>
+
+<div class="page_content">
+
+    <%= form_for @pokemon do |f| %>
+    <%= f.label 'Pokemon Name:' %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label 'Pokedex ID:' %><br>
+    <%= f.text_field :pokedex_id %><br>
+
+    <%= f.label 'Team ID:' %><br>
+    <%= f.text_field :team_id %><br>
+
+    <%= f.submit "Update Pokemon" %>
+    <% end %> 
+</div>

@@ -1,1 +1,12 @@
-<h1><%= @team.name %> <%= @team.trainer.name %> <%= (link_to 'edit', edit_team_path(@team)) %></h1>
+<div class="page_title">
+    <h1 class="h1_title">
+        <%= @team.name %> ID: <%= @team.id %> <%= (link_to 'edit', edit_team_path(@team)) %>
+    </h1>
+</div>
+
+<div class="page_content">
+    <% @team.pokemon.all.each do |pokemon| %>
+        <div><%= (link_to pokemon.name, pokemon_path(pokemon)) %> <%= (link_to 'edit', edit_pokemon_path(pokemon)) %></div>
+    <% end %>
+
+</div>

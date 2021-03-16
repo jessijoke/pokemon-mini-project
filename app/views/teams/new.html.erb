@@ -1,9 +1,19 @@
-<%= form_tag teams_path do %>
-  <label>Team Name:</label><br>
-  <%= text_field_tag :name %><br>
+<div class="page_title">
+    <h1 class="h1_title">
+        New Team
+    </h1>
+</div>
 
-  <label>Trainer ID:</label><br>
-  <%= number_field_tag :trainer_id %><br>
+<div class="page_content">
 
-  <%= submit_tag "Add Team" %>
-<% end %>
+    <%= form_tag teams_path do %>
+    <label>Team Name:</label><br>
+    <%= text_field_tag :name %><br>
+
+    <label>Trainer ID:</label><br>
+    <%= number_field_tag :trainer_id %><br>
+
+    <%= submit_tag "Add Team" %>
+    <% end %>
+
+ </div>

@@ -1,9 +1,13 @@
-<div style="text-align: center;">
-        <%= (link_to 'Create a New Trainer', new_trainer_path) %>
+<div class="page_title">
+    <h1 class="h1_title">
+        View All Existing Trainers
+    </h1>
 </div>
 
-<% @trainers.each do |trainer| %>
-    <div style="text-align: center;">
-        <%= (link_to trainer.name, trainer_path(trainer)) %>    
-    </div>
-<% end %>
+<div class="page_content">
+    <% @trainers.each do |trainer| %>
+        <div style="text-align: center;">
+            <span class="trainer_link_text"><%= (link_to trainer.name, trainer_path(trainer)) %></span> <span class="edit_link_text"><%= (link_to "edit", edit_trainer_path(trainer)) %>  </span> 
+        </div>
+    <% end %>
+</div>

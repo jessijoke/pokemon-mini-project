@@ -1,0 +1,24 @@
+<div class="page_title">
+    <h1 class="h1_title">
+        New Pokemon
+    </h1>
+</div>
+
+<div class="page_content">
+
+    <%= form_tag pokemons_path do %>
+    <label>Pokemon Nickname:</label><br>
+    <%= text_field_tag :name %><br>
+
+    <label>Team ID:</label><br>
+    <%= text_field_tag :team_id %><br>
+
+    <label>Trainer ID:</label><br>
+    <%= text_field_tag :trainer_id %><br>
+
+    <label>Pokedex ID:</label><br>
+    <%= text_field_tag :pokedex_id %><br>
+
+    <%= submit_tag "Add Pokemon" %>
+    <% end %>
+</div>

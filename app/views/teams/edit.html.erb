@@ -1,9 +1,19 @@
-<%= form_for @team do |f| %>
-  <%= f.label 'Team Name:' %><br>
-  <%= f.text_field :name %><br>
+<div class="page_title">
+    <h1 class="h1_title">
+        Edit <%= @team.name %>
+    </h1>
+</div>
 
-  <%= f.label 'Trainer ID:' %><br>
-  <%= f.number_field :trainer_id %><br>
+<div class="page_content">
 
-  <%= f.submit "Update Team" %>
-<% end %> 
+    <%= form_for @team do |f| %>
+    <%= f.label 'Team Name:' %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label 'Trainer ID:' %><br>
+    <%= f.number_field :trainer_id %><br>
+
+    <%= f.submit "Update Team" %>
+    <% end %> 
+
+ </div>

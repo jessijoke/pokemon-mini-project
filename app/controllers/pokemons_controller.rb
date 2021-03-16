@@ -1,10 +1,12 @@
 class PokemonsController < ApplicationController
     def index
-        @pokemon = Pokemon.all
+        @pokemons = Pokemon.all
     end
 
     def show
         @pokemon = Pokemon.find(params[:id])
+        pokemon_data = unique_url(@pokemon.pokedex_id)
+        @pokemon_image = pokemon_data["sprites"]["front_default"]
     end
 
     def new
@@ -16,6 +18,11 @@ class PokemonsController < ApplicationController
         @pokemon.name = params[:name]
         @pokemon.team_id = params[:team_id]
         @pokemon.trainer_id = params[:trainer_id]
+        @pokemon.pokedex_id = params[:pokedex_id]
+
+        pokemon_data = unique_url(params[:pokedex_id])
+
+
         @pokemon.save
         redirect_to pokemon_path(@pokemon)
     end
@@ -26,7 +33,17 @@ class PokemonsController < ApplicationController
 
     def update
         @pokemon = Pokemon.find(params[:id])
-        @pokemon.update(name: params[:pokemon][:name], trainer_id: params[:pokemon][:trainer_id], team_id: params[:pokemon][:team_id])
+        @pokemon.update(name: params[:pokemon][:name], trainer_id: params[:pokemon][:trainer_id], trainer_id: params[:pokemon][:trainer_id], pokedex_id: params[:pokemon][:pokedex_id])
         redirect_to pokemon_path(@pokemon)
     end
+
+    private
+
+        API_URL = 'https://pokeapi.co/api/v2/pokemon/'
+
+        def unique_url(pokemon_number)
+            response = HTTParty.get("#{API_URL}#{pokemon_number}")
+            # TODO more error checking (500 error, etc)
+            json = JSON.parse(response.body)
+        end
 end

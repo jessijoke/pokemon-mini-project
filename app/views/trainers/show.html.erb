@@ -1,4 +1,11 @@
-<h1><%= @trainer.name %> <%= (link_to 'Edit', (edit_trainer_path(@trainer))) %></h1>
-<% @trainer.teams.each do |team| %>
-    <div class="trainer_teams"><%= (link_to team.name, team_path(team)) %>  </div>  
-<% end %>
+<div class="page_title">
+    <h1 class="h1_title">
+        <%= @trainer.name %> ID: <%= @trainer.id %> <%= (link_to 'Edit', (edit_trainer_path(@trainer))) %>
+    </h1>
+</div>
+
+<div class="page_content">
+    <% @trainer.teams.each do |team| %>
+        <div class="trainer_teams"><%= (link_to team.name, team_path(team)) %>  <%= (link_to "edit", edit_team_path(team)) %></div>  
+    <% end %>
+</div>

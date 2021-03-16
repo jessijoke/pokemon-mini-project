@@ -1,6 +1,14 @@
-<%= form_tag trainers_path do %>
-  <label>Trainer Name:</label><br>
-  <%= text_field_tag :name %><br>
+<div class="page_title">
+    <h1 class="h1_title">
+        New Trainer
+    </h1>
+</div>
 
-  <%= submit_tag "Add Trainer" %>
-<% end %>
+<div class="page_content">
+    <%= form_tag trainers_path do %>
+    <label>Trainer Name:</label><br>
+    <%= text_field_tag :name %><br>
+
+    <%= submit_tag "Add Trainer" %>
+    <% end %>
+</div>
