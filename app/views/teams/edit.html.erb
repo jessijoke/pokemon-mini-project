@@ -7,13 +7,17 @@
 <div class="page_content">
 
     <%= form_for @team do |f| %>
-    <%= f.label 'Team Name:' %><br>
+    <div class="divider">
+    <%= f.label 'Team Name:', :class => "form_label" %><br>
     <%= f.text_field :name %><br>
+    </div>
 
-    <%= f.label 'Trainer ID:' %><br>
+    <div class="divider">
+    <%= f.label 'Trainer ID:', :class => "form_label" %><br>
     <%= f.number_field :trainer_id %><br>
+    </div>
 
-    <%= f.submit "Update Team" %>
+    <%= f.submit "Update Team", :class => "button"  %>
     <% end %> 
 
  </div>

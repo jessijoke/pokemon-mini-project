@@ -6,9 +6,11 @@
 
 <div class="page_content">
     <%= form_tag trainers_path do %>
-    <label>Trainer Name:</label><br>
-    <%= text_field_tag :name %><br>
+    <div class="divider">
+    <label class="form_label">Trainer Name:</label><br>
+    <%= text_field_tag :name%><br>
+    </div>
 
-    <%= submit_tag "Add Trainer" %>
+    <%= submit_tag "Add Trainer", :class => "button" %>
     <% end %>
 </div>

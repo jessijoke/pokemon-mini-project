@@ -7,15 +7,18 @@
 <div class="page_content">
 
     <%= form_for @pokemon do |f| %>
-    <%= f.label 'Pokemon Name:' %><br>
+    <div class="divider">
+    <%= f.label 'Pokemon Name:', :class => "form_label" %><br>
     <%= f.text_field :name %><br>
-
-    <%= f.label 'Pokedex ID:' %><br>
+    </div>
+    <div class="divider">
+    <%= f.label 'Pokedex ID:', :class => "form_label"  %><br>
     <%= f.text_field :pokedex_id %><br>
-
-    <%= f.label 'Team ID:' %><br>
+    </div>
+    <div class="divider">
+    <%= f.label 'Team ID:', :class => "form_label"  %><br>
     <%= f.text_field :team_id %><br>
-
-    <%= f.submit "Update Pokemon" %>
+    </div>
+    <%= f.submit "Update Pokemon", :class => "button"  %>
     <% end %> 
 </div>

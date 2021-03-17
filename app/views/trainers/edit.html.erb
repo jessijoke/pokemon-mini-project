@@ -6,9 +6,11 @@
 
 <div class="page_content">
     <%= form_for @trainer do |f| %>
-    <%= f.label 'Trainer Name:' %><br>
+    <div class="divider">
+    <%= f.label 'Trainer Name:', :class => "form_label" %><br>
     <%= f.text_field :name %><br>
+    </div>
 
-    <%= f.submit "Update Trainer" %>
+    <%= f.submit "Update Trainer", :class => "button"  %>
     <% end %> 
 </div>

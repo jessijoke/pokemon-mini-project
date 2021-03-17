@@ -7,6 +7,9 @@ class PokemonsController < ApplicationController
         @pokemon = Pokemon.find(params[:id])
         pokemon_data = unique_url(@pokemon.pokedex_id)
         @pokemon_image = pokemon_data["sprites"]["front_default"]
+        @pokemon_name = pokemon_data["species"]["name"]
+        @pokemon_type = pokemon_data["types"][0]["type"]["name"]
+        @pokemon_ability = pokemon_data["abilities"][0]["ability"]["name"]
     end
 
     def new

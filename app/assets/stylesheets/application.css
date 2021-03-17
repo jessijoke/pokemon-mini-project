@@ -130,3 +130,20 @@ body {
     font-family: helvetica;
     font-weight: 800;
 }
+
+.button {
+    background-color: #fdcd00; /* Green */
+    border: none;
+    color: #3c57a9;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: 10px;
+  }
+
+  .divider {
+      padding-bottom: 5px;
+  }

@@ -6,14 +6,18 @@
 
 <div class="page_content">
 
-    <%= form_tag teams_path do %>
-    <label>Team Name:</label><br>
-    <%= text_field_tag :name %><br>
+    <div class="divider">
+        <%= form_tag teams_path do %>
+        <label class="form_label">Team Name:</label><br>
+        <%= text_field_tag :name %><br>
+    </div>
 
-    <label>Trainer ID:</label><br>
-    <%= number_field_tag :trainer_id %><br>
+    <div class="divider">
+        <label class="form_label">Trainer ID:</label><br>
+        <%= number_field_tag :trainer_id, :class => "form_padding" %><br>
+    </div>
 
-    <%= submit_tag "Add Team" %>
+    <%= submit_tag "Add Team", :class => "button"  %>
     <% end %>
 
  </div>

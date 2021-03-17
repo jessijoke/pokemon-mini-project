@@ -7,18 +7,27 @@
 <div class="page_content">
 
     <%= form_tag pokemons_path do %>
-    <label>Pokemon Nickname:</label><br>
+
+    <div class="divider">
+    <label class="form_label">Pokemon Nickname:</label><br>
     <%= text_field_tag :name %><br>
+    </div>
 
-    <label>Team ID:</label><br>
+    <div class="divider">
+    <label class="form_label">Team ID:</label><br>
     <%= text_field_tag :team_id %><br>
+    </div>
 
-    <label>Trainer ID:</label><br>
+    <div class="divider">
+    <label class="form_label">Trainer ID:</label><br>
     <%= text_field_tag :trainer_id %><br>
+    </div>
 
-    <label>Pokedex ID:</label><br>
-    <%= text_field_tag :pokedex_id %><br>
+    <div class="divider">
+    <label class="form_label">Pokedex ID:</label><br>
+    <%= text_field_tag :pokedex_id git a%><br>
+    </div>
 
-    <%= submit_tag "Add Pokemon" %>
+    <%= submit_tag "Add Pokemon", :class => "button"  %>
     <% end %>
 </div>
