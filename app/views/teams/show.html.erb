@@ -7,6 +7,7 @@
 <div class="page_content">
     <% @team.pokemon.all.each do |pokemon| %>
         <div><%= (link_to pokemon.name, pokemon_path(pokemon)) %> <%= (link_to 'edit', edit_pokemon_path(pokemon)) %></div>
+        <%= (link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{pokemon.pokedex_id}.png"), pokemon_path(pokemon)) %>
     <% end %>
 
 </div>

@@ -6,6 +6,11 @@
 
 <div class="page_content">
     <% @trainer.teams.each do |team| %>
-        <div class="trainer_teams"><%= (link_to team.name, team_path(team)) %>  <%= (link_to "edit", edit_team_path(team)) %></div>  
+        <div class="trainer_teams"><%= (link_to team.name, team_path(team)) %>  <%= (link_to "edit", edit_team_path(team)) %></div> 
+        <div class="trainer_pokemon_preview">
+            <% team.pokemon.each do |poke| %>
+                <%= (link_to image_tag("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/#{poke.pokedex_id}.png"), pokemon_path(poke)) %>
+            <% end %>
+        </div> 
     <% end %>
 </div>
